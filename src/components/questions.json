@@ -1,0 +1,18 @@
+[
+  {
+    "type": "question",
+    "question": "May I know your name, please?"
+  },
+  {
+    "type": "question",
+    "question": "Your contact number?"
+  },
+  {
+    "type": "question",
+    "question": "City?"
+  },
+  {
+    "type": "question",
+    "question": "State?"
+  }
+]
