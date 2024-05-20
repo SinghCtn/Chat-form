@@ -42,6 +42,7 @@ export default function ChatMessages() {
 
     if (currentQuestionIndex <= questionLen) {
       setChat((prev) => [...prev, question[currentQuestionIndex]]);
+
       setCurrentQuestionIndex((prev) => prev + 1);
     } else {
       setChat((prev) => [
@@ -51,21 +52,14 @@ export default function ChatMessages() {
           question: "Thank you for Choosing Career Definer!",
         },
       ]);
-      setChat((prev) => [
-        ...prev,
-        {
-          type: "question",
-          question:
-            "For immediate assistance, feel free to call on +91 8699986933",
-        },
-      ]);
+
       setMessageDisable(true);
     }
   };
 
   return (
     <>
-      <ScrollArea ref={messageRef} className="h-full border p-2">
+      <div ref={messageRef} className="h-full border p-2 overflow-auto">
         <Questions>
           Welcome to Career Definer I am here to assist you in finding the right
           career path. To better assist you, could you plese provide me with
@@ -127,7 +121,7 @@ export default function ChatMessages() {
             )
           )}
         </div>
-      </ScrollArea>
+      </div>
       <ChatInput
         className="px-4  "
         onSubmitAns={onAnswer}
